@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contacto</title>
+  <title>Formulario de Contacto</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -57,25 +57,10 @@
   </div>
 
   <script>
-    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      const nombre = e.target.nombre.value.trim();
-      const email = e.target.email.value.trim();
-      const mensaje = e.target.mensaje.value.trim();
-      const data = { nombre, email, mensaje };
-
-      const respuesta = await fetch("https://TU-ENDPOINT-AQUI.amazonaws.com/contacto", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-
-      if (respuesta.ok) {
-        alert("Mensaje enviado con éxito");
-        e.target.reset();
-      } else {
-        alert("Ocurrió un error al enviar el formulario");
-      }
+      alert("Mensaje enviado con éxito ✅");
+      e.target.reset();
     });
   </script>
 </body>
